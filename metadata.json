@@ -1,0 +1,6 @@
+{
+  "name": "USG Kuwait",
+  "description": "Premium construction company portfolio website for USG based in Kuwait, showcasing luxury villas, modern houses, and commercial projects.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
