@@ -3,6 +3,7 @@ import { Project } from "../types";
 import { X, ChevronLeft, ChevronRight } from "lucide-react";
 import { motion, AnimatePresence } from "motion/react";
 import gsap from "gsap";
+import { useLanguage } from "../contexts/LanguageContext";
 
 interface GalleryModalProps {
   project: Project;
@@ -46,6 +47,7 @@ function LetterReveal({ text }: { text: string }) {
 }
 
 export default function GalleryModal({ project, onClose }: GalleryModalProps) {
+  const { t } = useLanguage();
   const [currentIndex, setCurrentIndex] = useState(0);
   const touchStartX = useRef<number | null>(null);
   const touchEndX = useRef<number | null>(null);
@@ -112,7 +114,7 @@ export default function GalleryModal({ project, onClose }: GalleryModalProps) {
       <div className="absolute top-0 left-0 w-full z-10 px-6 py-4 bg-gradient-to-b from-black/80 to-transparent flex items-center justify-between">
         <div className="text-white">
           <span className="text-white/40 font-bold text-[9px] uppercase tracking-[0.25em] block animate-fade-in-down">
-            PORTFOLIO GALLERY
+            {t("gallery.label")}
           </span>
           <h3 className="text-sm font-bold uppercase tracking-wider text-white">
             <LetterReveal text={project.name} />
@@ -122,7 +124,7 @@ export default function GalleryModal({ project, onClose }: GalleryModalProps) {
         {/* Progress Tracker */}
         <div className="flex items-center space-x-6">
           <span className="text-[10px] font-mono text-white/50 tracking-widest">
-            {currentIndex + 1} OF {images.length}
+            {currentIndex + 1} {t("gallery.of")} {images.length}
           </span>
           <button
             onClick={onClose}

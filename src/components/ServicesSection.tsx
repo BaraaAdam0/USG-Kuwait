@@ -1,6 +1,7 @@
 import React from "react";
 import { ArrowUpRight } from "lucide-react";
 import { Project } from "../types";
+import { useLanguage } from "../contexts/LanguageContext";
 
 interface ServicesSectionProps {
   projects: Project[];
@@ -8,7 +9,13 @@ interface ServicesSectionProps {
 }
 
 export default function ServicesSection({ projects, onSelectCategory }: ServicesSectionProps) {
+  const { t } = useLanguage();
   const categories = ["Mosques", "Villas", "Commercial"];
+  const catLabelMap: Record<string, string> = {
+    Mosques: t("services.cat.mosques"),
+    Villas: t("services.cat.villas"),
+    Commercial: t("services.cat.commercial"),
+  };
 
   const buildItems = categories.map((category) => {
     const categoryProjects = projects.filter((p) => p.category === category);
@@ -25,10 +32,10 @@ export default function ServicesSection({ projects, onSelectCategory }: Services
         {/* Header */}
         <div className="text-center mb-16">
           <span className="text-white/40 font-bold tracking-[0.3em] text-[10px] uppercase block mb-3">
-            Our Expertise
+            {t("services.label")}
           </span>
           <h2 className="text-3xl md:text-5xl font-light text-white tracking-tight">
-            What We Build
+            {t("services.title")}
           </h2>
           <div className="w-12 h-[1px] bg-white/20 mx-auto mt-6"></div>
         </div>
@@ -61,10 +68,10 @@ export default function ServicesSection({ projects, onSelectCategory }: Services
                 {/* Caption */}
                 <div className="absolute bottom-0 left-0 right-0 p-5">
                   <h3 className="text-sm font-bold uppercase tracking-wider text-white mb-1">
-                    {item.category}
+                    {catLabelMap[item.category]}
                   </h3>
                   <p className="text-white/90 text-[10px] uppercase tracking-widest">
-                    {item.count} Completed {item.count === 1 ? "Project" : "Projects"}
+                    {item.count} {item.count === 1 ? t("services.project") : t("services.projects")}
                   </p>
                 </div>
               </div>

@@ -1,8 +1,8 @@
 import React, { useLayoutEffect, useRef, ReactNode } from "react";
 import { Project } from "../types";
 import { Maximize2, FileText, Compass } from "lucide-react";
-import { motion } from "motion/react";
 import gsap from "gsap";
+import { useLanguage } from "../contexts/LanguageContext";
 
 interface ProjectGridProps {
   projects: Project[];
@@ -64,14 +64,15 @@ function TiltCard({
 }
 
 export default function ProjectGrid({ projects, onOpenGallery, onViewDetails }: ProjectGridProps) {
+  const { t } = useLanguage();
   return (
     <div className="w-full max-w-7xl mx-auto px-6 sm:px-12 py-20" id="projects">
       <div className="text-center mb-16">
         <span className="text-white/40 font-bold tracking-[0.3em] text-[10px] uppercase block mb-3">
-          Our Portfolio
+          {t("grid.label")}
         </span>
         <h2 className="text-3xl md:text-5xl font-light text-white tracking-tight">
-          Featured Architectural Projects
+          {t("grid.title")}
         </h2>
         <div className="w-12 h-[1px] bg-white/20 mx-auto mt-6"></div>
       </div>
@@ -80,10 +81,10 @@ export default function ProjectGrid({ projects, onOpenGallery, onViewDetails }: 
         <div className="text-center py-20 bg-charcoal-850 rounded-none border border-white/5">
           <Compass className="h-10 w-10 text-white/40 mx-auto mb-4" />
           <p className="text-white/60 text-xs tracking-widest uppercase">
-            No projects match your filter criteria.
+            {t("grid.empty")}
           </p>
           <p className="text-white/30 text-[10px] uppercase tracking-wider mt-2">
-            Try adjusting the filter dropdowns or reset them to view all projects.
+            {t("grid.empty.sub")}
           </p>
         </div>
       ) : (
@@ -127,34 +128,24 @@ export default function ProjectGrid({ projects, onOpenGallery, onViewDetails }: 
                     <Maximize2 className="h-5 w-5" />
                   </div>
                   <span className="text-[9px] uppercase font-bold tracking-[0.25em] text-white mt-3 bg-charcoal-900/90 px-3 py-1 border border-white/10">
-                    Launch Gallery
+                    {t("grid.launch")}
                   </span>
                 </div>
 
                 {/* Overlaid texts matching Artistic Flair */}
-                <motion.div
-                  className="transform translate-y-2 group-hover:translate-y-0 transition-transform duration-300"
-                  initial={{ y: 8, opacity: 0 }}
-                  whileInView={{ y: 0, opacity: 1 }}
-                  transition={{ duration: 0.5 }}
-                >
+                <div className="transform translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
                   <div className="text-white/50 text-[9px] font-bold tracking-[0.2em] uppercase mb-1.5">
                     <span>{project.category}</span>
                   </div>
-                  <motion.h3
-                    className="text-xl sm:text-2xl font-bold text-white tracking-tight mb-2 uppercase"
-                    initial={{ y: 10 }}
-                    whileHover={{ y: -5 }}
-                    transition={{ duration: 0.3 }}
-                  >
+                  <h3 className="text-xl sm:text-2xl font-bold text-white tracking-tight mb-2 uppercase hover:-translate-y-1 transition-transform duration-300">
                     {project.name}
-                  </motion.h3>
+                  </h3>
                   <p className="text-white/70 text-xs font-light tracking-wide max-w-md line-clamp-1">
                     {project.subtitle}
                   </p>
 
                   <div className="mt-4 flex items-center space-x-2 text-white/50 text-[9px] uppercase font-bold tracking-widest opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <span>Click to explore photos</span>
+                    <span>{t("grid.explore")}</span>
                     <span>•</span>
                     <span
                       onClick={(e) => {
@@ -163,10 +154,10 @@ export default function ProjectGrid({ projects, onOpenGallery, onViewDetails }: 
                       }}
                       className="hover:underline hover:text-white"
                     >
-                      View Spec Sheet →
+                      {t("grid.spec")}
                     </span>
                   </div>
-                </motion.div>
+                </div>
               </div>
             </TiltCard>
           ))}

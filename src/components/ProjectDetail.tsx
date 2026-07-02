@@ -1,6 +1,7 @@
 import React from "react";
 import { Project } from "../types";
 import { Phone, MessageCircle, ArrowLeft, Maximize2, ArrowUpRight } from "lucide-react";
+import { useLanguage } from "../contexts/LanguageContext";
 
 interface ProjectDetailProps {
   project: Project;
@@ -17,6 +18,7 @@ export default function ProjectDetail({
   onNavigateToProject,
   onOpenGallery,
 }: ProjectDetailProps) {
+  const { t } = useLanguage();
   // Get 3 related projects (excluding the current one)
   const relatedProjects = allProjects
     .filter((p) => p.id !== project.id)
@@ -31,7 +33,7 @@ export default function ProjectDetail({
           className="inline-flex items-center space-x-2 text-[10px] uppercase font-bold tracking-[0.3em] text-white/60 hover:text-white transition-colors duration-200"
         >
           <ArrowLeft className="h-4 w-4" />
-          <span>Back to Portfolio</span>
+          <span>{t("detail.back")}</span>
         </button>
       </div>
 
@@ -69,12 +71,8 @@ export default function ProjectDetail({
               </button>
             </div>
 
-            {/* Middle Main Tagline matching Screenshot 2 exact style and Artistic Flair theme */}
+            {/* Middle project info */}
             <div className="max-w-2xl relative z-10">
-              <h2 className="text-3xl sm:text-5xl font-light text-white leading-[1.1] mb-6 tracking-tight uppercase">
-                We Don't Just Build Structures, <br />
-                <span className="font-bold">We Build Better Lives</span>
-              </h2>
               <p className="text-white font-bold text-[10px] tracking-[0.3em] uppercase mb-1.5">
                 {project.name} · {project.location}
               </p>
@@ -91,7 +89,7 @@ export default function ProjectDetail({
                   <Phone className="h-4 w-4 text-white/70" />
                 </div>
                 <div>
-                  <p className="text-[8px] uppercase tracking-[0.25em] text-white/40 font-bold">CONTACT US</p>
+                  <p className="text-[8px] uppercase tracking-[0.25em] text-white/40 font-bold">{t("detail.contact")}</p>
                   <a href="tel:+96599893948" className="text-xs font-bold tracking-widest text-white hover:underline transition-colors block mt-0.5">
                     +965 99893948
                   </a>
@@ -101,7 +99,7 @@ export default function ProjectDetail({
               {/* WhatsApp icon bottom-right */}
               <div className="flex items-center space-x-3">
                 <span className="text-[8px] uppercase tracking-[0.25em] text-white/40 hidden sm:inline mr-1 font-bold">
-                  CONNECT
+                  {t("detail.connect")}
                 </span>
 
                 {/* WhatsApp button */}
@@ -125,10 +123,10 @@ export default function ProjectDetail({
         <div className="lg:col-span-1 bg-charcoal-850 text-white rounded-none p-6 border border-white/5 flex flex-col justify-between">
           <div>
             <span className="text-white/40 font-bold tracking-[0.3em] text-[10px] uppercase block mb-1">
-              EXCLUSIVE DESIGNS
+              {t("detail.exclusive")}
             </span>
             <h3 className="text-[11px] font-bold uppercase tracking-[0.3em] text-white/80 pb-3 border-b border-white/5 mb-4">
-              Related Projects
+              {t("detail.related")}
             </h3>
 
             {/* 3 Related Project Thumbnails with titles and View More links */}
@@ -153,7 +151,7 @@ export default function ProjectDetail({
                     {relProj.name}
                   </h4>
                   <button className="text-[9px] font-bold uppercase tracking-[0.2em] text-white/40 group-hover/item:text-white inline-flex items-center mt-1 transition-colors">
-                    <span>View More</span>
+                    <span>{t("detail.viewmore")}</span>
                     <ArrowUpRight className="ml-1 h-3 w-3" />
                   </button>
                 </div>
@@ -164,30 +162,30 @@ export default function ProjectDetail({
           {/* Bottom Specifications Sheet on the dark panel */}
           <div className="mt-8 pt-4 border-t border-white/5 text-white/60">
             <h4 className="text-[9px] font-bold text-white/40 tracking-[0.2em] uppercase mb-3">
-              PROJECT DETAILS
+              {t("detail.specs")}
             </h4>
             <div className="grid grid-cols-2 gap-y-1.5 gap-x-2 font-mono text-[9px] mb-4">
-              <span>CATEGORY:</span>
+              <span>{t("detail.category")}</span>
               <span className="font-sans font-bold text-white text-right">{project.category}</span>
 
-              <span>LOCATION:</span>
+              <span>{t("detail.location")}</span>
               <span className="font-sans font-bold text-white text-right">{project.location}</span>
 
-              <span>YEAR:</span>
+              <span>{t("detail.year")}</span>
               <span className="font-sans font-bold text-white text-right">{project.year}</span>
 
               {project.area && (<>
-                <span>AREA:</span>
+                <span>{t("detail.area")}</span>
                 <span className="font-sans font-bold text-white text-right">{project.area}</span>
               </>)}
 
               {project.owner && (<>
-                <span>OWNER:</span>
+                <span>{t("detail.owner")}</span>
                 <span className="font-sans font-bold text-white text-right">{project.owner}</span>
               </>)}
 
               {project.scope && (<>
-                <span>SCOPE:</span>
+                <span>{t("detail.scope")}</span>
                 <span className="font-sans font-bold text-white text-right">{project.scope}</span>
               </>)}
             </div>
@@ -196,7 +194,7 @@ export default function ProjectDetail({
               onClick={() => onOpenGallery(project.id)}
               className="w-full mt-6 py-3 border border-white/15 hover:border-white text-white hover:bg-white hover:text-charcoal-900 text-center text-[10px] font-bold uppercase tracking-[0.2em] rounded-none transition-all duration-300 cursor-pointer"
             >
-              Launch Gallery View
+              {t("detail.gallery")}
             </button>
           </div>
         </div>

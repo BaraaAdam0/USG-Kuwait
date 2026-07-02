@@ -24,21 +24,17 @@ export default function ScrollAnimationWrapper({
       gsap.fromTo(
         el,
         {
-          opacity: 0,
-          y: 70,
-          rotateX: 7,
-          transformPerspective: 1200,
-          transformOrigin: "50% 100%",
+          opacity: 0.2,
+          y: 30,
         },
         {
           opacity: 1,
           y: 0,
-          rotateX: 0,
-          duration: 1,
-          ease: "power3.out",
+          duration: 0.55,
+          ease: "power2.out",
           scrollTrigger: {
             trigger: el,
-            start: "top 82%",
+            start: "top 92%",
             once: true,
           },
         }
@@ -52,5 +48,6 @@ export default function ScrollAnimationWrapper({
     <div ref={ref} className={className} style={{ willChange: "transform, opacity" }}>
       {children}
     </div>
+
   );
 }

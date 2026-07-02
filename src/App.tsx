@@ -18,11 +18,13 @@ import ContactSection from "./components/ContactSection";
 import LoadingScreen from "./components/LoadingScreen";
 import ScrollAnimationWrapper from "./components/ScrollAnimationWrapper";
 
-import { ArrowDown, MessageCircle, ArrowUpRight } from "lucide-react";
+import { ArrowDown, MessageCircle } from "lucide-react";
+import { useLanguage } from "./contexts/LanguageContext";
 
 const projects: Project[] = projectsData as Project[];
 
 export default function App() {
+  const { t } = useLanguage();
   const [currentView, setCurrentView] = useState<"home" | "detail">("home");
   const [selectedProjectId, setSelectedProjectId] = useState<string>("al-sedeeq-villa");
   const [isGalleryOpen, setIsGalleryOpen] = useState(false);
@@ -145,16 +147,12 @@ export default function App() {
 
             {/* Hero Overlaid Headline Statement */}
             <div
-              className="relative z-20 max-w-4xl px-6 sm:px-12 space-y-6 mt-10"
+              className="relative z-20 max-w-4xl px-6 sm:px-12 mt-10"
               style={{ textShadow: "0 2px 10px rgba(0,0,0,0.9)" }}
             >
-              <span className="text-white/90 text-[10px] sm:text-xs font-bold tracking-[0.4em] uppercase block mb-2 sm:mb-4 animate-fade-in-down">
-                ARCHITECTURAL EXCELLENCE IN KUWAIT
+              <span className="text-white/90 text-[10px] sm:text-xs font-bold tracking-[0.4em] uppercase block animate-fade-in-down">
+                {t("hero.tagline")}
               </span>
-              <h1 className="text-4xl sm:text-6xl md:text-7xl font-light text-white leading-[1.1] tracking-tight uppercase">
-                We Don't Just Build Structures, <br />
-                <span className="font-bold text-white">We Build Better Lives</span>
-              </h1>
             </div>
 
             {/* Scroll prompt — pinned to bottom of hero */}
@@ -163,7 +161,7 @@ export default function App() {
               className="absolute bottom-10 left-1/2 -translate-x-1/2 z-20 inline-flex flex-col items-center justify-center text-[9px] text-white tracking-[0.2em] uppercase transition-opacity hover:opacity-70"
               style={{ textShadow: "0 2px 10px rgba(0,0,0,0.9)" }}
             >
-              <span>Scroll down to explore</span>
+              <span>{t("hero.scroll")}</span>
               <ArrowDown className="h-4 w-4 mt-2 animate-bounce" />
             </button>
           </div>
@@ -240,7 +238,7 @@ export default function App() {
             </a>
           </div>
           <p className="text-[9px] font-mono tracking-widest text-white/20 pt-4">
-            &copy; {new Date().getFullYear()} USG CONSTRUCTION COMPANY. ALL RIGHTS RESERVED.
+            {t("footer.rights").replace("{year}", String(new Date().getFullYear()))}
           </p>
         </div>
       </footer>

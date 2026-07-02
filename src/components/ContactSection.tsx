@@ -1,7 +1,9 @@
 import React from "react";
 import { Phone, Mail, Clock, Navigation, MapPin } from "lucide-react";
+import { useLanguage } from "../contexts/LanguageContext";
 
 export default function ContactSection() {
+  const { t } = useLanguage();
 
   return (
     <section className="bg-charcoal-900 text-white py-24 border-t border-white/5" id="contact">
@@ -10,10 +12,10 @@ export default function ContactSection() {
         {/* Header */}
         <div className="text-center mb-16">
           <span className="text-white/40 font-bold tracking-[0.3em] text-[10px] uppercase block mb-3">
-            Get In Touch
+            {t("contact.label")}
           </span>
           <h2 className="text-3xl md:text-5xl font-light text-white tracking-tight">
-            Contact USG Kuwait
+            {t("contact.title")}
           </h2>
           <div className="w-12 h-[1px] bg-white/20 mx-auto mt-6"></div>
         </div>
@@ -22,7 +24,7 @@ export default function ContactSection() {
           {/* Contact Information */}
           <div className="space-y-8 bg-charcoal-850 p-6 sm:p-8 rounded-none border border-white/5">
             <h3 className="text-[10px] font-bold uppercase tracking-[0.3em] text-white/40 border-b border-white/5 pb-3">
-              Contact Information
+              {t("contact.info")}
             </h3>
 
             <div className="space-y-6">
@@ -32,9 +34,9 @@ export default function ContactSection() {
                   <Navigation className="h-4 w-4" />
                 </div>
                 <div>
-                  <p className="text-[8px] uppercase tracking-[0.25em] text-white/40 font-bold">Headquarters</p>
+                  <p className="text-[8px] uppercase tracking-[0.25em] text-white/40 font-bold">{t("contact.hq")}</p>
                   <p className="text-xs text-white/75 mt-1 leading-relaxed">
-                    AbdelHady Commercial Center, Floor 6, Alqibla, Kuwait City, Fahad Al-Salem Street
+                    {t("contact.hq.address")}
                   </p>
                 </div>
               </div>
@@ -45,7 +47,7 @@ export default function ContactSection() {
                   <Phone className="h-4 w-4" />
                 </div>
                 <div>
-                  <p className="text-[8px] uppercase tracking-[0.25em] text-white/40 font-bold">Phone</p>
+                  <p className="text-[8px] uppercase tracking-[0.25em] text-white/40 font-bold">{t("contact.phone")}</p>
                   <div className="space-y-1 mt-1">
                     <a href="tel:+96599893948" className="text-xs font-bold text-white hover:underline block tracking-wider">
                       +965 99893948
@@ -66,7 +68,7 @@ export default function ContactSection() {
                   <Mail className="h-4 w-4" />
                 </div>
                 <div>
-                  <p className="text-[8px] uppercase tracking-[0.25em] text-white/40 font-bold">General Inquiries</p>
+                  <p className="text-[8px] uppercase tracking-[0.25em] text-white/40 font-bold">{t("contact.email.label")}</p>
                   <a href="mailto:info@usgroup.site" className="text-xs text-white/75 hover:underline mt-1 block">
                     info@usgroup.site
                   </a>
@@ -79,10 +81,10 @@ export default function ContactSection() {
                   <Clock className="h-4 w-4" />
                 </div>
                 <div>
-                  <p className="text-[8px] uppercase tracking-[0.25em] text-white/40 font-bold">Working Hours</p>
+                  <p className="text-[8px] uppercase tracking-[0.25em] text-white/40 font-bold">{t("contact.hours.label")}</p>
                   <p className="text-xs text-white/75 mt-1 leading-relaxed">
-                    Saturday – Thursday: 9:00 AM – 5:00 PM <br />
-                    Friday: Closed
+                    {t("contact.hours.text")} <br />
+                    {t("contact.hours.fri")}
                   </p>
                 </div>
               </div>
@@ -92,7 +94,7 @@ export default function ContactSection() {
           {/* Google Maps Button */}
           <div className="bg-charcoal-850 p-6 sm:p-8 rounded-none border border-white/5 flex flex-col items-center justify-center space-y-6">
             <h3 className="text-[10px] font-bold uppercase tracking-[0.3em] text-white/40">
-              Visit Us
+              {t("contact.visit")}
             </h3>
             <a
               href="https://maps.app.goo.gl/vdnP11L9mGrk69J9A"
@@ -101,7 +103,7 @@ export default function ContactSection() {
               className="w-full flex items-center justify-center space-x-2 bg-white hover:bg-white/95 text-charcoal-900 py-5 sm:py-4 rounded-none font-bold uppercase text-[10px] sm:text-[9px] tracking-[0.25em] transition-all duration-300 min-h-[48px] sm:min-h-auto"
             >
               <MapPin className="h-5 sm:h-4 w-5 sm:w-4" />
-              <span>Open in Google Maps</span>
+              <span>{t("contact.maps")}</span>
             </a>
             <p className="text-[9px] text-white/50 text-center leading-relaxed">
               AbdelHady Commercial Center<br />Floor 6, Alqibla<br />Fahad Al-Salem Street<br />Kuwait City
