@@ -41,12 +41,12 @@ export default function StatCounter({ value, label, Icon }: StatCounterProps) {
   return (
     <div ref={ref} className="space-y-1">
       <div className="flex items-center space-x-2 text-white">
-        <Icon className="h-4 w-4 opacity-50" />
-        <span className="text-2xl sm:text-3xl font-bold text-white tracking-tight">
+        <Icon className="h-4 w-4 text-brand-orange" />
+        <span className="text-3xl sm:text-4xl font-black text-white tracking-tight">
           {displayValue}
         </span>
       </div>
-      <p className="text-[9px] uppercase tracking-[0.2em] text-white/40 font-bold">
+      <p className="text-[9px] uppercase tracking-[0.2em] text-white/55 font-bold">
         {label}
       </p>
     </div>

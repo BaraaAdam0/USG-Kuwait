@@ -50,13 +50,19 @@ export default function Navbar({ currentView, onNavigate, onScrollToSection }: N
       <div className="max-w-7xl mx-auto px-6 lg:px-12">
         <div className="flex items-center justify-between h-20">
           {/* Logo - Matching <div class="text-3xl font-black tracking-tighter">USG</div> */}
-          <div className="flex-shrink-0 cursor-pointer flex items-baseline gap-1" onClick={() => onNavigate("home")}>
-            <span className="text-3xl font-black tracking-tighter text-white font-sans uppercase">
-              USG
-            </span>
-            <span className="text-[9px] font-bold tracking-[0.3em] text-white/50 uppercase ml-1">
-              Kuwait
-            </span>
+          <div className="flex-shrink-0 cursor-pointer flex items-center gap-2" onClick={() => onNavigate("home")}>
+            <div className="flex items-baseline gap-1">
+              <span className="text-4xl font-black tracking-tighter text-white font-sans uppercase">
+                USG
+              </span>
+              <span className="text-[9px] font-bold tracking-[0.3em] text-white/60 uppercase ml-1">
+                Kuwait
+              </span>
+            </div>
+            <span
+              className="w-2 h-2 rounded-full bg-brand-orange shadow-[0_0_10px_2px_rgba(232,93,38,0.7)]"
+              aria-hidden="true"
+            ></span>
           </div>
 
           {/* Desktop Navigation - Matching nav: flex gap-10 text-[10px] font-bold uppercase tracking-[0.4em] opacity-80 */}
@@ -65,7 +71,7 @@ export default function Navbar({ currentView, onNavigate, onScrollToSection }: N
               <button
                 key={item.id}
                 onClick={() => handleNavClick(item.id)}
-                className="text-[10px] font-bold uppercase tracking-[0.4em] text-white opacity-80 hover:opacity-100 hover:border-b hover:border-white/40 pb-1 transition-all duration-200"
+                className="text-[10px] font-bold uppercase tracking-[0.4em] text-white opacity-80 hover:opacity-100 hover:border-b hover:border-brand-orange pb-1 transition-all duration-200"
               >
                 {t(item.labelKey)}
               </button>
@@ -76,13 +82,13 @@ export default function Navbar({ currentView, onNavigate, onScrollToSection }: N
           <div className="hidden md:flex items-center gap-4">
             <button
               onClick={toggleLanguage}
-              className="inline-flex items-center justify-center px-3 py-2 border border-white/20 hover:border-white text-[10px] font-bold uppercase tracking-[0.15em] text-white bg-transparent hover:bg-white/5 transition-all duration-300 min-w-[45px]"
+              className="inline-flex items-center justify-center px-3 py-2 border border-white/20 hover:border-brand-orange text-[10px] font-bold uppercase tracking-[0.15em] text-white bg-transparent hover:bg-brand-orange/10 transition-all duration-300 min-w-[45px]"
             >
               {language === "en" ? "AR" : "EN"}
             </button>
             <button
               onClick={() => onScrollToSection("projects")}
-              className="inline-flex items-center justify-center px-6 py-2.5 border border-white/20 hover:border-white text-[10px] font-bold uppercase tracking-[0.25em] text-white bg-transparent hover:bg-white hover:text-charcoal-900 transition-all duration-300"
+              className="inline-flex items-center justify-center px-6 py-2.5 border border-white/20 hover:border-brand-orange text-[10px] font-bold uppercase tracking-[0.25em] text-white bg-transparent hover:bg-brand-orange hover:text-white transition-all duration-300"
             >
               {t("nav.choose")}
               <ArrowUpRight className="ml-2 h-3 w-3" />
@@ -117,7 +123,7 @@ export default function Navbar({ currentView, onNavigate, onScrollToSection }: N
           <div className="pt-4 border-t border-white/5 space-y-3">
             <button
               onClick={toggleLanguage}
-              className="w-full py-2.5 border border-white/20 text-white hover:bg-white/5 text-xs font-bold uppercase tracking-[0.15em] transition-colors duration-200"
+              className="w-full py-2.5 border border-white/20 hover:border-brand-orange text-white hover:bg-brand-orange/10 text-xs font-bold uppercase tracking-[0.15em] transition-colors duration-200"
             >
               {language === "en" ? "العربية (AR)" : "English (EN)"}
             </button>
@@ -126,7 +132,7 @@ export default function Navbar({ currentView, onNavigate, onScrollToSection }: N
                 setIsOpen(false);
                 onScrollToSection("projects");
               }}
-              className="w-full flex items-center justify-center py-3 border border-white/20 text-white hover:bg-white hover:text-charcoal-900 text-xs font-bold uppercase tracking-[0.25em] transition-colors duration-200"
+              className="w-full flex items-center justify-center py-3 border border-white/20 hover:border-brand-orange text-white hover:bg-brand-orange hover:text-white text-xs font-bold uppercase tracking-[0.25em] transition-colors duration-200"
             >
               {t("nav.choose")}
               <ArrowUpRight className="ml-1.5 h-3.5 w-3.5" />

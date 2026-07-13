@@ -25,8 +25,8 @@ export default function FilterBar({ selectedCategory, onCategoryChange }: Filter
             onClick={() => onCategoryChange(value)}
             className={`text-[9px] sm:text-[10px] uppercase font-bold tracking-[0.2em] sm:tracking-[0.3em] pb-2 transition-all duration-300 whitespace-nowrap ${
               selectedCategory === value
-                ? "text-white border-b-2 border-white"
-                : "text-white opacity-40 hover:opacity-100"
+                ? "text-brand-orange border-b-2 border-brand-orange"
+                : "text-white opacity-50 hover:opacity-100 hover:text-brand-orange"
             }`}
           >
             {label}

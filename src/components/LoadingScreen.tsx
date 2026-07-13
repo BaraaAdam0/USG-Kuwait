@@ -44,11 +44,12 @@ export default function LoadingScreen({ onComplete }: LoadingScreenProps) {
               USG
             </motion.h1>
             <motion.p
-              className="text-sm md:text-base font-bold tracking-[0.3em] text-white/50 uppercase mt-4"
+              className="text-sm md:text-base font-bold tracking-[0.3em] text-white/60 uppercase mt-4 flex items-center justify-center gap-2"
               animate={{ opacity: [0, 1] }}
               transition={{ duration: 1, delay: 0.3 }}
             >
               Kuwait
+              <span className="w-1.5 h-1.5 rounded-full bg-brand-orange shadow-[0_0_10px_2px_rgba(232,93,38,0.7)]" aria-hidden="true"></span>
             </motion.p>
           </motion.div>
         </motion.div>

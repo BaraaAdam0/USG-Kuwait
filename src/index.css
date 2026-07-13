@@ -10,6 +10,8 @@
   --color-charcoal-800: #1a1a1a;
   --color-charcoal-700: #252525;
   --color-charcoal-600: #333333;
+  --color-brand-orange: #E85D26;
+  --color-brand-orange-dim: #E85D2680;
 }
 
 /* Base resets or utility additions */

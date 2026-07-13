@@ -11,31 +11,31 @@ export default function ContactSection() {
 
         {/* Header */}
         <div className="text-center mb-16">
-          <span className="text-white/40 font-bold tracking-[0.3em] text-[10px] uppercase block mb-3">
+          <span className="text-white/55 font-bold tracking-[0.3em] text-[10px] uppercase block mb-3">
             {t("contact.label")}
           </span>
-          <h2 className="text-3xl md:text-5xl font-light text-white tracking-tight">
+          <h2 className="text-4xl md:text-6xl font-light text-white tracking-tight">
             {t("contact.title")}
           </h2>
-          <div className="w-12 h-[1px] bg-white/20 mx-auto mt-6"></div>
+          <div className="w-16 h-1 bg-brand-orange mx-auto mt-6 shadow-[0_0_16px_1px_rgba(232,93,38,0.5)]"></div>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16">
           {/* Contact Information */}
-          <div className="space-y-8 bg-charcoal-850 p-6 sm:p-8 rounded-none border border-white/5">
-            <h3 className="text-[10px] font-bold uppercase tracking-[0.3em] text-white/40 border-b border-white/5 pb-3">
+          <div className="space-y-8 bg-charcoal-850 p-6 sm:p-8 rounded-none border border-brand-orange/25 shadow-[0_0_30px_-8px_rgba(232,93,38,0.4)] hover:border-brand-orange/50 transition-colors duration-300">
+            <h3 className="text-[10px] font-bold uppercase tracking-[0.3em] text-white/55 border-b border-white/10 pb-3">
               {t("contact.info")}
             </h3>
 
             <div className="space-y-6">
               {/* Address */}
               <div className="flex items-start space-x-4">
-                <div className="bg-white/5 text-white p-2.5 rounded-none border border-white/10 shrink-0">
+                <div className="bg-brand-orange/10 text-brand-orange p-2.5 rounded-none border border-brand-orange/25 shrink-0">
                   <Navigation className="h-4 w-4" />
                 </div>
                 <div>
-                  <p className="text-[8px] uppercase tracking-[0.25em] text-white/40 font-bold">{t("contact.hq")}</p>
-                  <p className="text-xs text-white/75 mt-1 leading-relaxed">
+                  <p className="text-[8px] uppercase tracking-[0.25em] text-brand-orange font-bold">{t("contact.hq")}</p>
+                  <p className="text-xs text-white/85 mt-1 leading-relaxed">
                     {t("contact.hq.address")}
                   </p>
                 </div>
@@ -43,19 +43,19 @@ export default function ContactSection() {
 
               {/* Phone */}
               <div className="flex items-start space-x-4">
-                <div className="bg-white/5 text-white p-2.5 rounded-none border border-white/10 shrink-0">
+                <div className="bg-brand-orange/10 text-brand-orange p-2.5 rounded-none border border-brand-orange/25 shrink-0">
                   <Phone className="h-4 w-4" />
                 </div>
                 <div>
-                  <p className="text-[8px] uppercase tracking-[0.25em] text-white/40 font-bold">{t("contact.phone")}</p>
+                  <p className="text-[8px] uppercase tracking-[0.25em] text-brand-orange font-bold">{t("contact.phone")}</p>
                   <div className="space-y-1 mt-1">
-                    <a href="tel:+96599893948" className="text-xs font-bold text-white hover:underline block tracking-wider">
+                    <a href="tel:+96599893948" className="text-xs font-bold text-white hover:text-brand-orange hover:underline block tracking-wider">
                       +965 99893948
                     </a>
-                    <a href="tel:+96550553515" className="text-xs font-bold text-white hover:underline block tracking-wider">
+                    <a href="tel:+96550553515" className="text-xs font-bold text-white hover:text-brand-orange hover:underline block tracking-wider">
                       +965 50553515
                     </a>
-                    <a href="tel:+96599939730" className="text-xs font-bold text-white hover:underline block tracking-wider">
+                    <a href="tel:+96599939730" className="text-xs font-bold text-white hover:text-brand-orange hover:underline block tracking-wider">
                       +965 99939730
                     </a>
                   </div>
@@ -64,12 +64,12 @@ export default function ContactSection() {
 
               {/* Email */}
               <div className="flex items-start space-x-4">
-                <div className="bg-white/5 text-white p-2.5 rounded-none border border-white/10 shrink-0">
+                <div className="bg-brand-orange/10 text-brand-orange p-2.5 rounded-none border border-brand-orange/25 shrink-0">
                   <Mail className="h-4 w-4" />
                 </div>
                 <div>
-                  <p className="text-[8px] uppercase tracking-[0.25em] text-white/40 font-bold">{t("contact.email.label")}</p>
-                  <a href="mailto:info@usgroup.site" className="text-xs text-white/75 hover:underline mt-1 block">
+                  <p className="text-[8px] uppercase tracking-[0.25em] text-brand-orange font-bold">{t("contact.email.label")}</p>
+                  <a href="mailto:info@usgroup.site" className="text-xs text-white/85 hover:text-brand-orange hover:underline mt-1 block">
                     info@usgroup.site
                   </a>
                 </div>
@@ -77,12 +77,12 @@ export default function ContactSection() {
 
               {/* Hours */}
               <div className="flex items-start space-x-4">
-                <div className="bg-white/5 text-white p-2.5 rounded-none border border-white/10 shrink-0">
+                <div className="bg-brand-orange/10 text-brand-orange p-2.5 rounded-none border border-brand-orange/25 shrink-0">
                   <Clock className="h-4 w-4" />
                 </div>
                 <div>
-                  <p className="text-[8px] uppercase tracking-[0.25em] text-white/40 font-bold">{t("contact.hours.label")}</p>
-                  <p className="text-xs text-white/75 mt-1 leading-relaxed">
+                  <p className="text-[8px] uppercase tracking-[0.25em] text-brand-orange font-bold">{t("contact.hours.label")}</p>
+                  <p className="text-xs text-white/85 mt-1 leading-relaxed">
                     {t("contact.hours.text")} <br />
                     {t("contact.hours.fri")}
                   </p>
@@ -92,20 +92,20 @@ export default function ContactSection() {
           </div>
 
           {/* Google Maps Button */}
-          <div className="bg-charcoal-850 p-6 sm:p-8 rounded-none border border-white/5 flex flex-col items-center justify-center space-y-6">
-            <h3 className="text-[10px] font-bold uppercase tracking-[0.3em] text-white/40">
+          <div className="bg-charcoal-850 p-6 sm:p-8 rounded-none border border-brand-orange/25 shadow-[0_0_30px_-8px_rgba(232,93,38,0.4)] hover:border-brand-orange/50 transition-colors duration-300 flex flex-col items-center justify-center space-y-6">
+            <h3 className="text-[10px] font-bold uppercase tracking-[0.3em] text-white/55">
               {t("contact.visit")}
             </h3>
             <a
               href="https://maps.app.goo.gl/vdnP11L9mGrk69J9A"
               target="_blank"
               rel="noopener noreferrer"
-              className="w-full flex items-center justify-center space-x-2 bg-white hover:bg-white/95 text-charcoal-900 py-5 sm:py-4 rounded-none font-bold uppercase text-[10px] sm:text-[9px] tracking-[0.25em] transition-all duration-300 min-h-[48px] sm:min-h-auto"
+              className="w-full flex items-center justify-center space-x-2 bg-brand-orange hover:bg-white hover:text-charcoal-900 text-white py-5 sm:py-4 rounded-none font-bold uppercase text-[10px] sm:text-[9px] tracking-[0.25em] transition-all duration-300 min-h-[48px] sm:min-h-auto"
             >
               <MapPin className="h-5 sm:h-4 w-5 sm:w-4" />
               <span>{t("contact.maps")}</span>
             </a>
-            <p className="text-[9px] text-white/50 text-center leading-relaxed">
+            <p className="text-[9px] text-white/70 text-center leading-relaxed">
               AbdelHady Commercial Center<br />Floor 6, Alqibla<br />Fahad Al-Salem Street<br />Kuwait City
             </p>
           </div>

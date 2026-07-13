@@ -128,11 +128,23 @@ export default function App() {
           {/* Hero Section — dark minimal luxury opener with centered brand mark */}
           <div
             ref={heroRef}
-            className="relative h-screen flex flex-col items-center justify-center text-center overflow-hidden"
-            style={{ backgroundColor: "#1a1a1a" }}
+            className="relative h-screen flex flex-col items-center justify-center text-center overflow-hidden bg-charcoal-950"
           >
-            {/* Subtle ambient glow behind the logo for depth */}
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-white/[0.03] rounded-full filter blur-[140px] pointer-events-none"></div>
+            {/* Hero background photograph */}
+            <img
+              src="/images/hero.jpg"
+              alt=""
+              aria-hidden="true"
+              loading="eager"
+              fetchPriority="high"
+              decoding="async"
+              className="absolute inset-0 w-full h-full object-cover object-center"
+            />
+
+            {/* Dark gradient + vignette overlay so text stays fully readable over the photo */}
+            <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/55 to-black/85"></div>
+            <div className="absolute inset-0 bg-black/25"></div>
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-black/50 rounded-full filter blur-[140px] pointer-events-none"></div>
 
             {/* Centered USG Logo Mark */}
             <img
@@ -147,12 +159,13 @@ export default function App() {
 
             {/* Hero Overlaid Headline Statement */}
             <div
-              className="relative z-20 max-w-4xl px-6 sm:px-12 mt-10"
+              className="relative z-20 max-w-4xl px-6 sm:px-12 mt-10 space-y-4"
               style={{ textShadow: "0 2px 10px rgba(0,0,0,0.9)" }}
             >
-              <span className="text-white/90 text-[10px] sm:text-xs font-bold tracking-[0.4em] uppercase block animate-fade-in-down">
+              <span className="text-white text-sm sm:text-base font-black tracking-[0.5em] uppercase block animate-fade-in-down">
                 {t("hero.tagline")}
               </span>
+              <div className="w-16 h-1 bg-brand-orange mx-auto shadow-[0_0_16px_2px_rgba(232,93,38,0.6)]"></div>
             </div>
 
             {/* Scroll prompt — pinned to bottom of hero */}
@@ -228,16 +241,16 @@ export default function App() {
           <p className="tracking-[0.4em] uppercase font-bold text-white text-xs">
             USG <span className="text-white/50 font-normal ml-1">KUWAIT</span>
           </p>
-          <div className="flex justify-center space-x-4 text-white/60 text-[10px] uppercase font-bold tracking-[0.2em] py-2">
-            <a href="mailto:info@usgroup.site" className="hover:text-white transition-colors">
+          <div className="flex justify-center space-x-4 text-white/70 text-[10px] uppercase font-bold tracking-[0.2em] py-2">
+            <a href="mailto:info@usgroup.site" className="hover:text-brand-orange transition-colors">
               info@usgroup.site
             </a>
-            <span className="text-white/20">|</span>
-            <a href="tel:+96599893948" className="hover:text-white transition-colors">
+            <span className="text-white/30">|</span>
+            <a href="tel:+96599893948" className="hover:text-brand-orange transition-colors">
               +965 99893948
             </a>
           </div>
-          <p className="text-[9px] font-mono tracking-widest text-white/20 pt-4">
+          <p className="text-[9px] font-mono tracking-widest text-white/35 pt-4">
             {t("footer.rights").replace("{year}", String(new Date().getFullYear()))}
           </p>
         </div>
@@ -246,8 +259,8 @@ export default function App() {
       {/* Floating WhatsApp Button with Pulse Animation */}
       <style>{`
         @keyframes pulse-custom {
-          0%, 100% { box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.7); }
-          50% { box-shadow: 0 0 0 10px rgba(34, 197, 94, 0); }
+          0%, 100% { box-shadow: 0 0 0 0 rgba(232, 93, 38, 0.55); }
+          50% { box-shadow: 0 0 0 12px rgba(232, 93, 38, 0); }
         }
         .whatsapp-pulse {
           animation: pulse-custom 3s infinite;
@@ -257,7 +270,7 @@ export default function App() {
         href="https://wa.me/96599893948"
         target="_blank"
         rel="noopener noreferrer"
-        className="fixed bottom-6 right-6 sm:bottom-8 sm:right-8 z-40 flex items-center justify-center w-14 h-14 sm:w-16 sm:h-16 bg-green-500 hover:bg-green-600 rounded-full shadow-2xl transition-all duration-300 hover:scale-110 whatsapp-pulse"
+        className="fixed bottom-6 right-6 sm:bottom-8 sm:right-8 z-40 flex items-center justify-center w-14 h-14 sm:w-16 sm:h-16 bg-green-500 hover:bg-green-600 border-2 border-brand-orange/70 hover:border-brand-orange rounded-full shadow-2xl transition-all duration-300 hover:scale-110 whatsapp-pulse"
         aria-label="Chat on WhatsApp"
       >
         <MessageCircle className="w-6 h-6 sm:w-7 sm:h-7 text-white fill-white" />

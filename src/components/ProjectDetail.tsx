@@ -76,7 +76,7 @@ export default function ProjectDetail({
               <p className="text-white font-bold text-[10px] tracking-[0.3em] uppercase mb-1.5">
                 {project.name} · {project.location}
               </p>
-              <p className="text-white/60 text-xs sm:text-sm font-light max-w-lg tracking-wide leading-relaxed">
+              <p className="text-white/75 text-xs sm:text-sm font-light max-w-lg tracking-wide leading-relaxed">
                 {project.subtitle}
               </p>
             </div>
@@ -86,10 +86,10 @@ export default function ProjectDetail({
               {/* Phone bottom-left */}
               <div className="flex items-center space-x-3 text-white">
                 <div className="bg-white/5 p-2.5 rounded-none border border-white/10">
-                  <Phone className="h-4 w-4 text-white/70" />
+                  <Phone className="h-4 w-4 text-brand-orange" />
                 </div>
                 <div>
-                  <p className="text-[8px] uppercase tracking-[0.25em] text-white/40 font-bold">{t("detail.contact")}</p>
+                  <p className="text-[8px] uppercase tracking-[0.25em] text-brand-orange font-bold">{t("detail.contact")}</p>
                   <a href="tel:+96599893948" className="text-xs font-bold tracking-widest text-white hover:underline transition-colors block mt-0.5">
                     +965 99893948
                   </a>
@@ -98,7 +98,7 @@ export default function ProjectDetail({
 
               {/* WhatsApp icon bottom-right */}
               <div className="flex items-center space-x-3">
-                <span className="text-[8px] uppercase tracking-[0.25em] text-white/40 hidden sm:inline mr-1 font-bold">
+                <span className="text-[8px] uppercase tracking-[0.25em] text-brand-orange hidden sm:inline mr-1 font-bold">
                   {t("detail.connect")}
                 </span>
 
@@ -107,7 +107,7 @@ export default function ProjectDetail({
                   href={`https://wa.me/96599893948?text=${encodeURIComponent(`Hello USG Kuwait, I am interested in the ${project.name} project.`)}`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="bg-white/5 text-white hover:bg-white hover:text-charcoal-900 p-2.5 rounded-none border border-white/10 transition-all duration-300 shadow-xl"
+                  className="bg-white/5 text-white hover:bg-brand-orange hover:text-white p-2.5 rounded-none border border-white/10 hover:border-brand-orange transition-all duration-300 shadow-xl"
                   title="Chat on WhatsApp"
                   onClick={(e) => e.stopPropagation()}
                 >
@@ -122,10 +122,10 @@ export default function ProjectDetail({
         {/* Artistic Flair dark architectural sidebar */}
         <div className="lg:col-span-1 bg-charcoal-850 text-white rounded-none p-6 border border-white/5 flex flex-col justify-between">
           <div>
-            <span className="text-white/40 font-bold tracking-[0.3em] text-[10px] uppercase block mb-1">
+            <span className="text-white/55 font-bold tracking-[0.3em] text-[10px] uppercase block mb-1">
               {t("detail.exclusive")}
             </span>
-            <h3 className="text-[11px] font-bold uppercase tracking-[0.3em] text-white/80 pb-3 border-b border-white/5 mb-4">
+            <h3 className="text-[11px] font-bold uppercase tracking-[0.3em] text-white/90 pb-3 border-b-2 border-brand-orange/60 mb-4">
               {t("detail.related")}
             </h3>
 
@@ -150,7 +150,7 @@ export default function ProjectDetail({
                   <h4 className="text-[10px] font-bold uppercase tracking-[0.1em] text-white/90 group-hover/item:text-white transition-colors">
                     {relProj.name}
                   </h4>
-                  <button className="text-[9px] font-bold uppercase tracking-[0.2em] text-white/40 group-hover/item:text-white inline-flex items-center mt-1 transition-colors">
+                  <button className="text-[9px] font-bold uppercase tracking-[0.2em] text-white/50 group-hover/item:text-brand-orange inline-flex items-center mt-1 transition-colors">
                     <span>{t("detail.viewmore")}</span>
                     <ArrowUpRight className="ml-1 h-3 w-3" />
                   </button>
@@ -161,7 +161,7 @@ export default function ProjectDetail({
 
           {/* Bottom Specifications Sheet on the dark panel */}
           <div className="mt-8 pt-4 border-t border-white/5 text-white/60">
-            <h4 className="text-[9px] font-bold text-white/40 tracking-[0.2em] uppercase mb-3">
+            <h4 className="text-[9px] font-bold text-white/55 tracking-[0.2em] uppercase mb-3">
               {t("detail.specs")}
             </h4>
             <div className="grid grid-cols-2 gap-y-1.5 gap-x-2 font-mono text-[9px] mb-4">
@@ -192,7 +192,7 @@ export default function ProjectDetail({
 
             <button
               onClick={() => onOpenGallery(project.id)}
-              className="w-full mt-6 py-3 border border-white/15 hover:border-white text-white hover:bg-white hover:text-charcoal-900 text-center text-[10px] font-bold uppercase tracking-[0.2em] rounded-none transition-all duration-300 cursor-pointer"
+              className="w-full mt-6 py-3 border border-white/15 hover:border-brand-orange text-white hover:bg-brand-orange hover:text-white text-center text-[10px] font-bold uppercase tracking-[0.2em] rounded-none transition-all duration-300 cursor-pointer"
             >
               {t("detail.gallery")}
             </button>

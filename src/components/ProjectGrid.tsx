@@ -68,22 +68,22 @@ export default function ProjectGrid({ projects, onOpenGallery, onViewDetails }: 
   return (
     <div className="w-full max-w-7xl mx-auto px-6 sm:px-12 py-20" id="projects">
       <div className="text-center mb-16">
-        <span className="text-white/40 font-bold tracking-[0.3em] text-[10px] uppercase block mb-3">
+        <span className="text-white/55 font-bold tracking-[0.3em] text-[10px] uppercase block mb-3">
           {t("grid.label")}
         </span>
-        <h2 className="text-3xl md:text-5xl font-light text-white tracking-tight">
+        <h2 className="text-4xl md:text-6xl font-light text-white tracking-tight">
           {t("grid.title")}
         </h2>
-        <div className="w-12 h-[1px] bg-white/20 mx-auto mt-6"></div>
+        <div className="w-16 h-1 bg-brand-orange mx-auto mt-6 shadow-[0_0_16px_1px_rgba(232,93,38,0.5)]"></div>
       </div>
 
       {projects.length === 0 ? (
         <div className="text-center py-20 bg-charcoal-850 rounded-none border border-white/5">
-          <Compass className="h-10 w-10 text-white/40 mx-auto mb-4" />
-          <p className="text-white/60 text-xs tracking-widest uppercase">
+          <Compass className="h-10 w-10 text-brand-orange/70 mx-auto mb-4" />
+          <p className="text-white/75 text-xs tracking-widest uppercase">
             {t("grid.empty")}
           </p>
-          <p className="text-white/30 text-[10px] uppercase tracking-wider mt-2">
+          <p className="text-white/45 text-[10px] uppercase tracking-wider mt-2">
             {t("grid.empty.sub")}
           </p>
         </div>
@@ -92,7 +92,7 @@ export default function ProjectGrid({ projects, onOpenGallery, onViewDetails }: 
           {projects.map((project) => (
             <TiltCard
               key={project.id}
-              className="group relative h-[420px] rounded-none overflow-hidden bg-charcoal-950 border border-white/5 shadow-2xl cursor-pointer"
+              className="group relative h-[420px] rounded-none overflow-hidden bg-charcoal-950 border border-white/5 border-b-2 border-b-transparent hover:border-b-brand-orange shadow-2xl cursor-pointer transition-colors duration-300"
             >
               {/* Lazy loaded image */}
               <img
@@ -103,6 +103,9 @@ export default function ProjectGrid({ projects, onOpenGallery, onViewDetails }: 
                 className="absolute inset-0 w-full h-full object-cover transform scale-100 group-hover:scale-[1.03] transition-transform duration-700 ease-out brightness-75 group-hover:brightness-50"
               />
 
+              {/* Dedicated bottom gradient so overlaid text always stays readable */}
+              <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-black/95 via-black/40 to-transparent pointer-events-none"></div>
+
               {/* Top Details Action Badge */}
               <div className="absolute top-4 right-4 z-10 flex space-x-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                 <button
@@ -110,7 +113,7 @@ export default function ProjectGrid({ projects, onOpenGallery, onViewDetails }: 
                     e.stopPropagation();
                     onViewDetails(project.id);
                   }}
-                  className="bg-charcoal-900 border border-white/10 text-white hover:bg-white hover:text-charcoal-900 p-2.5 rounded-none transition-all duration-300"
+                  className="bg-charcoal-900 border border-white/10 text-white hover:bg-brand-orange hover:border-brand-orange hover:text-white p-2.5 rounded-none transition-all duration-300"
                   title="View Design Details"
                 >
                   <FileText className="h-4 w-4" />
@@ -133,18 +136,18 @@ export default function ProjectGrid({ projects, onOpenGallery, onViewDetails }: 
                 </div>
 
                 {/* Overlaid texts matching Artistic Flair */}
-                <div className="transform translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
-                  <div className="text-white/50 text-[9px] font-bold tracking-[0.2em] uppercase mb-1.5">
+                <div className="relative transform translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
+                  <div className="text-brand-orange text-[9px] font-bold tracking-[0.2em] uppercase mb-1.5">
                     <span>{project.category}</span>
                   </div>
-                  <h3 className="text-xl sm:text-2xl font-bold text-white tracking-tight mb-2 uppercase hover:-translate-y-1 transition-transform duration-300">
+                  <h3 className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight mb-2 uppercase hover:-translate-y-1 transition-transform duration-300">
                     {project.name}
                   </h3>
-                  <p className="text-white/70 text-xs font-light tracking-wide max-w-md line-clamp-1">
+                  <p className="text-white/80 text-sm font-light tracking-wide max-w-md line-clamp-1">
                     {project.subtitle}
                   </p>
 
-                  <div className="mt-4 flex items-center space-x-2 text-white/50 text-[9px] uppercase font-bold tracking-widest opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <div className="mt-4 flex items-center space-x-2 text-white/60 text-[9px] uppercase font-bold tracking-widest opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                     <span>{t("grid.explore")}</span>
                     <span>•</span>
                     <span
@@ -152,7 +155,7 @@ export default function ProjectGrid({ projects, onOpenGallery, onViewDetails }: 
                         e.stopPropagation();
                         onViewDetails(project.id);
                       }}
-                      className="hover:underline hover:text-white"
+                      className="hover:underline hover:text-brand-orange"
                     >
                       {t("grid.spec")}
                     </span>
