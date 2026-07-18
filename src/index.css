@@ -22,6 +22,14 @@ body {
   letter-spacing: -0.01em;
 }
 
+/* Arabic script must never receive letter-spacing — the wide tracking
+   utilities used for uppercase English kicker labels break Arabic letter
+   joining and make words look broken apart. Force normal spacing in RTL. */
+[dir="rtl"],
+[dir="rtl"] * {
+  letter-spacing: normal !important;
+}
+
 /* Custom scrollbars matching the monochromatic theme */
 ::-webkit-scrollbar {
   width: 5px;
