@@ -56,7 +56,7 @@ export default function ProjectDetail({
           >
             {/* Top Info Tag */}
             <div className="flex items-center justify-between">
-              <span className="bg-charcoal-900 border border-white/10 px-4 py-1.5 rounded-none text-[9px] font-bold tracking-[0.2em] uppercase text-white/90">
+              <span dir="ltr" className="bg-charcoal-900 border border-white/10 px-4 py-1.5 rounded-none text-[9px] font-bold tracking-[0.2em] uppercase text-white/90">
                 {project.category}
               </span>
               <button
@@ -72,7 +72,7 @@ export default function ProjectDetail({
             </div>
 
             {/* Middle project info */}
-            <div className="max-w-2xl relative z-10">
+            <div dir="ltr" className="max-w-2xl relative z-10">
               <p className="text-white font-bold text-[10px] tracking-[0.3em] uppercase mb-1.5">
                 {project.name} · {project.location}
               </p>
@@ -147,7 +147,7 @@ export default function ProjectDetail({
                     />
                     <div className="absolute inset-0 bg-black/20 group-hover/item:bg-black/40 transition-colors duration-300"></div>
                   </div>
-                  <h4 className="text-[10px] font-bold uppercase tracking-[0.1em] text-white/90 group-hover/item:text-white transition-colors">
+                  <h4 dir="ltr" className="text-[10px] font-bold uppercase tracking-[0.1em] text-white/90 group-hover/item:text-white transition-colors">
                     {relProj.name}
                   </h4>
                   <button className="text-[9px] font-bold uppercase tracking-[0.2em] text-white/50 group-hover/item:text-brand-orange inline-flex items-center mt-1 transition-colors">
@@ -166,27 +166,27 @@ export default function ProjectDetail({
             </h4>
             <div className="grid grid-cols-2 gap-y-1.5 gap-x-2 font-mono text-[9px] mb-4">
               <span>{t("detail.category")}</span>
-              <span className="font-sans font-bold text-white text-right">{project.category}</span>
+              <span dir="ltr" className="font-sans font-bold text-white text-right">{project.category}</span>
 
               <span>{t("detail.location")}</span>
-              <span className="font-sans font-bold text-white text-right">{project.location}</span>
+              <span dir="ltr" className="font-sans font-bold text-white text-right">{project.location}</span>
 
               <span>{t("detail.year")}</span>
-              <span className="font-sans font-bold text-white text-right">{project.year}</span>
+              <span dir="ltr" className="font-sans font-bold text-white text-right">{project.year}</span>
 
               {project.area && (<>
                 <span>{t("detail.area")}</span>
-                <span className="font-sans font-bold text-white text-right">{project.area}</span>
+                <span dir="ltr" className="font-sans font-bold text-white text-right">{project.area}</span>
               </>)}
 
               {project.owner && (<>
                 <span>{t("detail.owner")}</span>
-                <span className="font-sans font-bold text-white text-right">{project.owner}</span>
+                <span dir="ltr" className="font-sans font-bold text-white text-right">{project.owner}</span>
               </>)}
 
               {project.scope && (<>
                 <span>{t("detail.scope")}</span>
-                <span className="font-sans font-bold text-white text-right">{project.scope}</span>
+                <span dir="ltr" className="font-sans font-bold text-white text-right">{project.scope}</span>
               </>)}
             </div>
 

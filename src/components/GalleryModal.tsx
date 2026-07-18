@@ -31,7 +31,7 @@ function LetterReveal({ text }: { text: string }) {
   }, [text]);
 
   return (
-    <span ref={ref} aria-label={text} role="text" style={{ perspective: "400px" }}>
+    <span ref={ref} dir="ltr" aria-label={text} role="text" style={{ perspective: "400px" }}>
       {text.split("").map((ch, i) => (
         <span
           key={i}

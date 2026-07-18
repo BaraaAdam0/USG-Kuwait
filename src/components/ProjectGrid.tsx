@@ -137,13 +137,13 @@ export default function ProjectGrid({ projects, onOpenGallery, onViewDetails }: 
 
                 {/* Overlaid texts matching Artistic Flair */}
                 <div className="relative transform translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
-                  <div className="text-brand-orange text-[9px] font-bold tracking-[0.2em] uppercase mb-1.5">
+                  <div dir="ltr" className="text-brand-orange text-[9px] font-bold tracking-[0.2em] uppercase mb-1.5">
                     <span>{project.category}</span>
                   </div>
-                  <h3 className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight mb-2 uppercase hover:-translate-y-1 transition-transform duration-300">
+                  <h3 dir="ltr" className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight mb-2 uppercase hover:-translate-y-1 transition-transform duration-300">
                     {project.name}
                   </h3>
-                  <p className="text-white/80 text-sm font-light tracking-wide max-w-md line-clamp-1">
+                  <p dir="ltr" className="text-white/80 text-sm font-light tracking-wide max-w-md line-clamp-1">
                     {project.subtitle}
                   </p>
 
