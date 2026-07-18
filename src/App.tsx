@@ -130,16 +130,7 @@ export default function App() {
             ref={heroRef}
             className="relative h-screen flex flex-col items-center justify-center text-center overflow-hidden bg-charcoal-950"
           >
-            {/* Blurred ambient fill — the photo is a tall portrait shot, so on wide/laptop
-                screens it needs to be shown in full (object-contain) rather than cropped.
-                This blurred cover layer fills the resulting side letterboxing seamlessly. */}
-            <div
-              className="hidden md:block absolute inset-0 bg-cover bg-center scale-110 blur-3xl opacity-60"
-              style={{ backgroundImage: "url('/images/hero.jpg')" }}
-              aria-hidden="true"
-            ></div>
-
-            {/* Hero background photograph — fills the frame on mobile, shown in full on md+ */}
+            {/* Hero background photograph — full-bleed cover on all screen sizes */}
             <img
               src="/images/hero.jpg"
               alt=""
@@ -147,7 +138,7 @@ export default function App() {
               loading="eager"
               fetchPriority="high"
               decoding="async"
-              className="absolute inset-0 w-full h-full object-cover md:object-contain object-center"
+              className="absolute inset-0 w-full h-full object-cover object-center"
             />
 
             {/* Dark gradient + vignette overlay so text stays fully readable over the photo */}

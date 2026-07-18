@@ -17,7 +17,8 @@ export default function StatCounter({ value, label, Icon }: StatCounterProps) {
     if (!isInView) return;
 
     const numericValue = parseInt(value.replace(/\D/g, ""));
-    const suffix = value.replace(/\d/g, "");
+    const prefix = (value.match(/^\D+/) || [""])[0];
+    const suffix = (value.match(/\D+$/) || [""])[0];
     const duration = 1500;
     const steps = 60;
     const stepDuration = duration / steps;
@@ -27,7 +28,7 @@ export default function StatCounter({ value, label, Icon }: StatCounterProps) {
       currentStep++;
       const progress = currentStep / steps;
       const currentValue = Math.floor(numericValue * progress);
-      setDisplayValue(currentValue + suffix);
+      setDisplayValue(prefix + currentValue + suffix);
 
       if (currentStep >= steps) {
         setDisplayValue(value);
