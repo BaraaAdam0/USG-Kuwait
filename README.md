@@ -30,4 +30,4 @@ Vercel (deployment)
 Google Search Console (SEO)
 
 
-(https://usg-kuwait.vercel.app)
+(https://usgroup.site/)
